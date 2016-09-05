@@ -1,13 +1,15 @@
 /* tslint:disable */
-import { Injectable, Inject, Optional }  from '@angular/core';
-import { Http, Headers, Request }  from '@angular/http';
-import { NgModule, ModuleWithProviders }  from '@angular/core';
-import { JSONSearchParams }  from './search.params';
-import { ErrorHandler }  from './error.service';
-import { LoopBackAuth }  from './auth.service';
-import { LoopBackConfig }  from '../../lb.config';
-import 'rxjs/add/operator/catch' ;
-import 'rxjs/add/operator/map' ;
+import { Injectable, Inject, Optional } from '@angular/core';
+import { Http, Headers, Request } from '@angular/http';
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { JSONSearchParams } from './search.params';
+import { ErrorHandler } from './error.service';
+import { LoopBackAuth } from './auth.service';
+import { LoopBackConfig } from '../../lb.config';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import { Subject } from 'rxjs/Subject';
+import { SocketConnections } from '../../sockets/socket.connections';
 /**
 * @module BaseLoopBackApi
 * @author Nikolay Matiushenkov <https://github.com/mnvx>

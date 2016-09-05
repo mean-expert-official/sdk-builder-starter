@@ -19,11 +19,11 @@
 *
 * READ: https://angular.io/docs/ts/latest/cookbook/rc4-to-rc5.html#!#5-cleanup
 **/
-import { JSONSearchParams }  from './services/core/search.params';
-import { ErrorHandler }  from './services/core/error.service';
-import { LoopBackAuth }  from './services/core/auth.service';
-import { LoggerService }  from './services/custom/logger.service';
-import { UserApi }  from './services/custom/User';
+import { JSONSearchParams } from './services/core/search.params';
+import { ErrorHandler } from './services/core/error.service';
+import { LoopBackAuth } from './services/core/auth.service';
+import { LoggerService } from './services/custom/logger.service';
+import { UserApi } from './services/custom/User';
 /**
 * IMPORTANT: API_PROVIDERS WILL BE DEPRECATED WHEN ANGULAR 2 IS STABLE
 * PLEASE MIGRATE YOUR PROJECT AS SOON AS POSSIBLE.
@@ -41,3 +41,4 @@ export * from './models/index';
 export * from './services/index';
 export * from './lb.config';
 export * from './sdk.module';
+

@@ -32,14 +32,14 @@
 * export class AppModule { }
 *
 **/
-import { JSONSearchParams }  from './services/core/search.params';
-import { ErrorHandler }  from './services/core/error.service';
-import { LoopBackAuth }  from './services/core/auth.service';
-import { LoggerService }  from './services/custom/logger.service';
-import { HttpModule }  from '@angular/http';
-import { CommonModule }  from '@angular/common';
-import { NgModule, ModuleWithProviders }  from '@angular/core';
-import { UserApi }  from './services/custom/User';
+import { JSONSearchParams } from './services/core/search.params';
+import { ErrorHandler } from './services/core/error.service';
+import { LoopBackAuth } from './services/core/auth.service';
+import { LoggerService } from './services/custom/logger.service';
+import { HttpModule } from '@angular/http';
+import { CommonModule } from '@angular/common';
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { UserApi } from './services/custom/User';
 
 @NgModule({
   imports:      [ CommonModule, HttpModule ],

@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@types/jasmine": "^2.2.30",
+    "@types/socket.io-client": "^1.4.26",
     "angular-cli": "1.0.0-beta.11-webpack.8",
     "codelyzer": "~0.0.26",
     "jasmine-core": "2.4.1",

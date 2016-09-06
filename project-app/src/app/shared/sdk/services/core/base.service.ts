@@ -47,7 +47,7 @@ export abstract class BaseLoopBackApi {
     url         : string,
     routeParams : any = {},
     urlParams   : any = {},
-    postBody    : any = null  
+    postBody    : any = null,    isio        : boolean = false  
   ) {
 
     let headers = new Headers();
@@ -69,7 +69,20 @@ export abstract class BaseLoopBackApi {
       );
     }
 
-      // Body fix for built in remote methods using "data", "options" or "credentials
+    if (isio) {
+      if (requestUrl.match(/fk/)) {
+        let arr = requestUrl.split('/'); arr.pop();
+        requestUrl = arr.join('/');
+      }
+      let event: string = (`[${method}]${requestUrl}`).replace(/\?/, '');
+      let subject: Subject<any> = new Subject<any>();
+      let socket: any = SocketConnections.getHandler(LoopBackConfig.getPath(), {
+        id: this.auth.getAccessTokenId(),
+        userId: this.auth.getCurrentUserId()
+      });
+      socket.on(event, res => subject.next(res));
+      return subject.asObservable();
+    } else {      // Body fix for built in remote methods using "data", "options" or "credentials
       // that are the actual body, Custom remote method properties are different and need
       // to be wrapped into a body object
       let body: any;
@@ -95,5 +108,5 @@ export abstract class BaseLoopBackApi {
       return this.http.request(request)
         .map(res => (res.text() != "" ? res.json() : {}))
         .catch(this.errorHandler.handleError);
-  }
+   }  }
 }

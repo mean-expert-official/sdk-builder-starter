@@ -6,7 +6,7 @@
     "start": "node .",
     "pretest": "eslint .",
     "posttest": "nsp check",
-    "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ../project-app/src/app/shared/sdk"
+    "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ../project-app/src/app/shared/sdk -i enabled"
   },
   "dependencies": {
     "compression": "^1.0.3",
@@ -15,12 +15,13 @@
     "loopback": "^2.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^2.4.0",
+    "loopback-component-pubsub": "^1.0.18",
     "loopback-datasource-juggler": "^2.39.0",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^1.0.1"
   },
   "devDependencies": {
-    "@mean-expert/loopback-sdk-builder": "^2.0.7",
+    "@mean-expert/loopback-sdk-builder": "^2.0.8",
     "eslint": "^2.5.3",
     "nsp": "^2.1.0"
   },
